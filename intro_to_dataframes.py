@@ -1,0 +1,29 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import style
+style.use('ggplot')
+
+web_stats = {
+                'Day':[1,2,3,4,5,6],
+                'Visitors': [43, 53, 34, 45, 64, 34],
+                'Bounce_Rate': [65, 72, 62, 64, 54, 66]
+             }
+
+# Define the data frame. Optionally set index.
+df = pd.DataFrame(web_stats)
+df.set_index('Day', inplace=True)
+
+# print(df.tail(3))
+# print(df['Visitors'])
+# print(df.Bounce_Rate)
+# print(df[['Visitors','Bounce_Rate']])
+
+# print(df['Visitors'].tolist())
+# print(np.array(df))
+
+df.reset_index(inplace=True)
+my_array_data = np.array(df)
+print(my_array_data)
+new_df = pd.DataFrame(my_array_data)
+print(new_df)
