@@ -1,8 +1,6 @@
 import pandas as pd
 import datetime
 from pandas_datareader import data as web
-# import matplotlib
-# matplotlib.use('Qt4agg')
 import matplotlib.pyplot as plt
 from matplotlib import style
 

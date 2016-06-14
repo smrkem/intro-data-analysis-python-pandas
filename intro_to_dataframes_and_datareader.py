@@ -1,9 +1,9 @@
 import pandas as pd
 from pandas_datareader import data as web
 import datetime
-import plotting.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
-from plotting import style
+from matplotlib import style
 style.use('ggplot')
 
 web_stats = {
@@ -37,4 +37,4 @@ start = datetime.datetime(2010, 1, 1)
 end = datetime.datetime(2016, 6, 21)
 
 df = web.DataReader("QCOM", "yahoo", start, end)
-print(df.tail())
+print(df.tail(20))
