@@ -33,8 +33,8 @@ df.set_index('Day', inplace=True)
 
 ## Pandas io.data
 
-start = datetime.datetime(2010, 1, 1)
-end = datetime.datetime(2016, 6, 21)
-
-df = web.DataReader("VUZI", "yahoo", start, end)
-print(df.tail(20))
+# start = datetime.datetime(2010, 1, 1)
+# end = datetime.datetime(2016, 6, 21)
+#
+# df = web.DataReader("VUZI", "yahoo", start, end)
+# print(df.tail(20))
