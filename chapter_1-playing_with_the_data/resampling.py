@@ -5,8 +5,8 @@ fig = plt.figure()
 ax1 = plt.subplot2grid((1,1),(0,0))
 # get initial data
 HPI_data = pd.read_pickle('../sources/US_STATES_HPI_percent_change.pickle')
-# NY1yr = HPI_data['NY'].resample('A').mean()
-NY1yr = HPI_data['NY'].resample('A').ohlc()
+NY1yr = HPI_data['NY'].resample('A').mean()
+# NY1yr = HPI_data['NY'].resample('A').ohlc()
 print(NY1yr.head())
 
 
