@@ -8,18 +8,22 @@ API_KEY = os.environ.get('QUANDL_API_KEY')
 
 
 # HPI_data = pd.read_pickle('../sources/US_STATES_HPI.pickle')
-def get_quandl_df(label, newlabel, percent_change=False):
-    df = quandl.get(label, authtoken=API_KEY)
-    df.rename(columns={'Value': newlabel}, inplace=True)
-    if percent_change:
-        df[newlabel] = (df[newlabel] - df[newlabel][0]) / df[newlabel][0] * 100.0
-    return df
+# def get_quandl_df(label, newlabel, percent_change=False):
+#     df = quandl.get(label, authtoken=API_KEY)
+#     df.rename(columns={'Value': newlabel}, inplace=True)
+#     if percent_change:
+#         df[newlabel] = (df[newlabel] - df[newlabel][0]) / df[newlabel][0] * 100.0
+#     return df
 
+
+HPI_data = pd.read_pickle('../sources/US_STATES_HPI_percent_change.pickle')
+
+# HPI_Benchmark = get_quandl_df('FMAC/HPI_USA', 'USA_AVE', percent_change=True)
 
 # print(HPI_Benchmark.head(4))
 
 # Columns:
-# print(HPI_data['TX'])
+# print(HPI_data['TX'].head())
 # HPI_data['TX2'] = HPI_data['TX'] * 2
 # print(HPI_data[['TX','TX2']].head())
 
@@ -33,8 +37,7 @@ def get_quandl_df(label, newlabel, percent_change=False):
 # Converting data to percent change data
 # 1. rewrite the get__data function to optionally convert to percent change
 # 2. Get us average HPI and assemble the data
-HPI_data = pd.read_pickle('../sources/US_STATES_HPI_percent_change.pickle')
-# HPI_Benchmark = get_quandl_df('FMAC/HPI_USA', 'USA_AVE', percent_change=True)
+
 
 
 # 3. Configure the plots
@@ -50,9 +53,9 @@ HPI_data = pd.read_pickle('../sources/US_STATES_HPI_percent_change.pickle')
 
 
 
-HPI_State_Correlations = HPI_data.corr()
-# print(HPI_State_Correlations)
-print(HPI_State_Correlations.describe())
+# HPI_State_Correlations = HPI_data.corr()
+# print(HPI_State_Correlations.head())
+# print(HPI_State_Correlations.describe())
 
 
 
