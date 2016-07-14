@@ -39,7 +39,8 @@ ax2 = plt.subplot2grid((2,1), (1,0), sharex=ax1)
 
 # Get a rolling correlation b/w NY and the US Benchmark for 12 months:
 # ===============================================
-HPI_data['NY_12MCOR_TO_MEAN'] = pd.rolling_corr(HPI_data['NY'], HPI_data['USA_AVE'], 12)
+HPI_data['NY_12MCOR_TO_MEAN'] = pd.rolling_corr(HPI_data['NY'], HPI_data['USA_AVE'], 12) #old way
+HPI_data['NY_12MCOR_TO_MEAN'] = HPI_data['NY'].rolling(window=12).corr(other=HPI_data['USA_AVE'])
 
 print(HPI_data[['NY', 'USA_AVE', 'NY_12MCOR_TO_MEAN']])
 HPI_data['NY'].plot(ax=ax1, label='NY_HPI')
